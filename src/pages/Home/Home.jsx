@@ -11,6 +11,8 @@ const Home = () => {
     setShowFilter(!showFilter)
   }
 
+  // eslint-disable-next-line no-unused-vars
+
   useEffect(() => {
     const fetchEvents = async () => {
       let events = await makeRequest(GET_EVENTS)
@@ -70,7 +72,11 @@ const Home = () => {
 
       <div className='cards'>
         {events.map((event) => {
-          return <Card key={event.id} event={event} />
+          return (
+            <div key={event.id}>
+              <Card event={event} />
+            </div>
+          )
         })}
       </div>
     </div>

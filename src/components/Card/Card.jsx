@@ -85,6 +85,7 @@ const Card = ({ event }) => {
               fontSize: '0.8rem',
               gap: '1rem',
               padding: '1rem',
+              backgroundColor: `${theme}`,
             }}
           >
             <span>{eventState.name}</span>

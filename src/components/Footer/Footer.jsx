@@ -23,7 +23,12 @@ const Footer = () => {
           <div
             onClick={() => setTheme(theme.colorHexCode)}
             key={index}
-            style={{ height: '1rem', width: '1rem', backgroundColor: `${theme.colorHexCode}` }}
+            style={{
+              height: '2rem',
+              width: '2rem',
+              backgroundColor: `${theme.colorHexCode}`,
+              borderRadius: '0.2rem',
+            }}
           ></div>
         ))}
       </div>

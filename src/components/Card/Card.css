@@ -1,0 +1,67 @@
+.card {
+  height: 25rem;
+  width: 18rem;
+  background-color: black;
+  color: white;
+
+  display: grid;
+  grid-template-rows: 45% 55%;
+  border-radius: 1rem;
+}
+
+.card-img > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  object-fit: cover;
+}
+.card-img > div {
+  height: 1px;
+  background-color: white;
+  margin-top: -5px;
+}
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.card-details > span:nth-child(1) {
+  font-family: 'Big Shoulders Text', cursive;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.card-details > span:nth-child(2) {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.engagement {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 1rem; */
+  width: 100%;
+}
+
+
+.fa-circle-check {
+  color: var(--green);
+}
+.fa-circle-xmark {
+  color: var(--yellow);
+}
+.fa-bookmark {
+  color: var(--red);
+}

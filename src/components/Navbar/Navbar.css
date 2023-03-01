@@ -1,0 +1,13 @@
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.navbar > span {
+  font-family: 'Big Shoulders Inline Display', cursive;
+  font-size: 3rem;
+}
+
+/* .padding {
+  padding-left: 8rem;
+  padding-right: 8rem;
+} */

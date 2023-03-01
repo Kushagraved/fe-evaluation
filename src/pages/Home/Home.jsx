@@ -19,8 +19,6 @@ const Home = () => {
     setShowFilter(!showFilter)
   }
 
-  // const options=['ALL','BOOKMARKED','REGISTERED','SEATS AVAILABLE'];
-
   const filteredArray = events.filter((event) => {
     return (
       event.name.toLowerCase().includes(search.toLowerCase()) &&
@@ -47,8 +45,10 @@ const Home = () => {
     }
     fetchEvents()
   }, [selectedOption])
-  console.log(events)
 
+  if (events.length === 0) {
+    return <h1>Loading...</h1>
+  }
   return (
     <div className='home padding text'>
       <style>

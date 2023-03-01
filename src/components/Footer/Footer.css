@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+  font-family: 'Sofia Sans', sans-serif;
+}
+.colors {
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.colors > div {
+  height: 1rem;
+  width: 1rem;
+  background-color: red;
+}
+.padding {
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
+.footer > button {
+  padding: 1rem;
+}

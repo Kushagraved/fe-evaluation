@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../../components/Card/Card'
 import { GET_EVENTS } from '../../constants/apiEndPoints'
+import { useTheme } from '../../context/ThemeContext'
 import makeRequest from '../../utils/makeRequest'
 import './Home.css'
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
   const [events, setEvents] = useState([])
   const [search, setSearch] = useState('')
   const [selectedOption, setSelectedOption] = useState('ALL')
+  const { theme } = useTheme()
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value)
@@ -44,14 +46,21 @@ const Home = () => {
       setEvents([...events])
     }
     fetchEvents()
-  }, [])
+  }, [selectedOption])
   console.log(events)
 
   return (
     <div className='home padding text'>
+      <style>
+        {`
+        i{
+          color:${theme};
+        }
+        `}
+      </style>
       <div className='filter-search'>
         <div className='filter'>
-          <i className='fa-solid fa-filter fa-2x'></i>
+          <i className='fa-solid fa-filter fa-2x '></i>
           <span>Filter</span>
           <i className='•	fa-solid fa-chevron-up fa-2x' onClick={handleFilter}></i>
         </div>

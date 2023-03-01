@@ -1,6 +1,7 @@
 .navbar {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  color: white;
 }
 .navbar > span {
   font-family: 'Big Shoulders Inline Display', cursive;

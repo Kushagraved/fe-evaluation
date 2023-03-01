@@ -5,6 +5,18 @@ export const GET_EVENTS = {
   method: 'get',
 };
 
+export const GET_THEMES= {
+  url: 'api/themes',
+  method: 'get',
+};
+
+export const SAVE_THEME= {
+  url: 'api/themes',
+  method: 'put',
+};
+
+
+
 export const GET_EVENT_BY_ID = (id) => ({
   url: `api/events/${id}`,
   method: 'get',

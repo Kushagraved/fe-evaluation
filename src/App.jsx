@@ -4,11 +4,14 @@ import './App.css'
 import Card from './components/Card/Card'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
+import { useTheme } from './context/ThemeContext'
 import Home from './pages/Home/Home'
 
 function App() {
+  const { theme } = useTheme()
+
   return (
-    <div className='App theme'>
+    <div className={`App`} style={{ backgroundColor: `${theme}` }}>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>

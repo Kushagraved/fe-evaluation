@@ -6,11 +6,13 @@ import makeRequest from '../../utils/makeRequest'
 import { GET_EVENT_BY_ID, UPDATE_BOOKMARK, UPDATE_REGISTER } from '../../constants/apiEndPoints'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useTheme } from '../../context/ThemeContext'
 
 // eslint-disable-next-line no-unused-vars
 const Card = ({ event }) => {
   const navigate = useNavigate()
   const { id } = useParams()
+  const { theme } = useTheme()
 
   // eslint-disable-next-line no-unused-vars
   const [eventState, setEventState] = useState(event)
@@ -20,7 +22,7 @@ const Card = ({ event }) => {
   const [isBookmarked, setIsBookmarked] = useState(eventState?.isBookmarked)
 
   const handleBookmark = async () => {
-    await makeRequest(UPDATE_BOOKMARK(event.id), {
+    await makeRequest(UPDATE_BOOKMARK(eventState.id), {
       data: {
         isBookmarked: !isBookmarked,
       },
@@ -42,6 +44,7 @@ const Card = ({ event }) => {
     console.log(res)
     setIsRegistered(!isRegistered)
   }
+
   useEffect(() => {
     if (eventState === undefined) {
       makeRequest(GET_EVENT_BY_ID(id)).then((res) => {
@@ -157,7 +160,7 @@ const Card = ({ event }) => {
         <img src={eventState.imgUrl}></img>
         <div></div>
       </div>
-      <div className='card-details'>
+      <div className='card-details' style={{ backgroundColor: `${theme}` }}>
         <span onClick={() => handleEventClick(eventState.id)}>{eventState.name}</span>
         <span onClick={() => handleEventClick(eventState.id)}>{eventState.description}</span>
         <span onClick={() => handleEventClick(eventState.id)}>
